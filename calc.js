@@ -32,7 +32,6 @@ botao.addEventListener('click', numeroNaTela)
 function numeroNaTela(e) {
       
   var isOperador = Operador.includes(e.currentTarget.value)
-      
 
      //Se estiver zerado, está no início do cálculo
       if(tela.value=="0"){
@@ -66,7 +65,7 @@ function numeroNaTela(e) {
       tela.value= tela.value.replace("^", "**")
       tela.value= tela.value.replace(",", ".")
 
-      var resultado = new Function("return " + tela.value)()
+      var resultado = new Function("return " + tela.value)() //executa o parêmetro como string
       tela.value = resultado.toLocaleString("pt-BR")
 
       inicio = 1
